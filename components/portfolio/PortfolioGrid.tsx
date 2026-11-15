@@ -55,6 +55,7 @@ function Cover({ item, sizes, className }: { item: GridItem; sizes: string; clas
           alt={`${item.title}${item.is_concept ? " (concept project)" : ""}`}
           fill
           sizes={sizes}
+          quality={90}
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
         />
       )}
@@ -73,7 +74,7 @@ const cardBase =
 function FeaturedCard({ item }: { item: GridItem }) {
   return (
     <article className={cardBase}>
-      <Cover item={item} sizes="(min-width: 1024px) 50vw, 92vw" className="aspect-[16/9] lg:aspect-auto lg:flex-1" />
+      <Cover item={item} sizes="(min-width: 1560px) 780px, (min-width: 1024px) 50vw, 100vw" className="aspect-[16/9] lg:aspect-auto lg:flex-1" />
       <div className="relative px-6 pb-6 pt-5 md:px-8 md:pb-8">
         <h3 className="text-2xl font-bold text-white md:text-[1.7rem]">
           <Link href={`/portfolio/${item.slug}`} className="after:absolute after:inset-0 focus:outline-none">{item.title}</Link>
@@ -94,10 +95,10 @@ function FeaturedCard({ item }: { item: GridItem }) {
   );
 }
 
-function SmallCard({ item }: { item: GridItem }) {
+function SmallCard({ item, sizes }: { item: GridItem; sizes: string }) {
   return (
     <article className={cardBase}>
-      <Cover item={item} sizes="(min-width: 1024px) 25vw, (min-width: 640px) 46vw, 92vw" className="aspect-[16/9]" />
+      <Cover item={item} sizes={sizes} className="aspect-[16/9]" />
       <div className="flex flex-1 items-end gap-4 px-6 pb-6 pt-4">
         <div className="min-w-0 flex-1">
           <h3 className="text-lg font-bold leading-snug text-white">
@@ -162,11 +163,11 @@ export function PortfolioGrid({ items, limit }: { items: GridItem[]; limit?: num
           ) : featured ? (
             <div className="grid gap-5 lg:grid-cols-4 lg:grid-rows-2">
               <div className="lg:col-span-2 lg:row-span-2"><FeaturedCard item={featured} /></div>
-              {rest.map((i) => <div key={i.id}><SmallCard item={i} /></div>)}
+              {rest.map((i) => <div key={i.id}><SmallCard item={i} sizes="(min-width: 1560px) 390px, (min-width: 1024px) 25vw, 100vw" /></div>)}
             </div>
           ) : (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {rest.map((i) => <SmallCard key={i.id} item={i} />)}
+              {rest.map((i) => <SmallCard key={i.id} item={i} sizes="(min-width: 1560px) 520px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />)}
             </div>
           )}
         </motion.div>

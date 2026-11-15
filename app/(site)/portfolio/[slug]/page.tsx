@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <Reveal>
             {p.cover_image && (
               <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-white/10 shadow-[0_30px_70px_-30px_rgba(29,111,242,.55)]">
-                <Image src={p.cover_image} alt={p.title} fill priority sizes="(min-width: 1024px) 58vw, 92vw" className="object-cover" />
+                <Image src={p.cover_image} alt={p.title} fill priority quality={90} sizes="(min-width: 1024px) 58vw, 100vw" className="object-cover" />
               </div>
             )}
             {p.is_concept && (
