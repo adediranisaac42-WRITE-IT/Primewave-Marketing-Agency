@@ -3,9 +3,6 @@ import { Layers, BarChart3, Megaphone, Users, MessagesSquare, RefreshCw } from "
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-/** Warm secondary accent used sparingly in this section. */
-const ORANGE = "#FF7A30";
-
 const featured = [
   {
     icon: Layers,
@@ -43,7 +40,6 @@ export function WhyChoose() {
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute -left-48 -top-40 h-[520px] w-[520px] rounded-full bg-cta/20 blur-[160px]" />
         <div className="absolute -bottom-40 right-0 h-[460px] w-[620px] rounded-full bg-accent/10 blur-[170px]" />
-        <div className="absolute -right-24 top-1/3 h-56 w-56 rounded-full blur-[120px]" style={{ background: `${ORANGE}26` }} />
       </div>
 
       <div className="container grid gap-12 lg:grid-cols-[0.95fr_1.6fr] lg:gap-10 xl:gap-14">
@@ -66,7 +62,7 @@ export function WhyChoose() {
                 className="object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05] motion-reduce:group-hover:scale-100"
               />
               <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-deep/70 to-transparent" />
-              <span aria-hidden className="absolute bottom-0 left-8 h-1 w-20 rounded-t-full" style={{ background: ORANGE }} />
+              <span aria-hidden className="absolute bottom-0 left-8 h-1 w-20 rounded-t-full bg-accent" />
             </div>
           </Reveal>
         </div>
@@ -96,8 +92,7 @@ export function WhyChoose() {
                   </div>
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-x-10 bottom-0 h-px opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    style={{ background: `linear-gradient(90deg, transparent, ${ORANGE}, transparent)` }}
+                    className="pointer-events-none absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                   />
                 </article>
               </StaggerItem>
@@ -108,7 +103,7 @@ export function WhyChoose() {
             <ul className="grid divide-y divide-white/10 rounded-3xl border border-white/10 bg-surface/70 backdrop-blur-sm sm:grid-cols-3 sm:divide-x sm:divide-y-0">
               {values.map(({ icon: Icon, title, body }) => (
                 <li key={title} className="group flex gap-4 p-6">
-                  <Icon aria-hidden className="mt-0.5 h-7 w-7 shrink-0 transition-transform duration-500 group-hover:rotate-6" style={{ color: ORANGE }} />
+                  <Icon aria-hidden className="mt-0.5 h-7 w-7 shrink-0 text-accent transition-transform duration-500 group-hover:rotate-6" />
                   <div>
                     <h3 className="font-semibold leading-snug text-white">{title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/60">{body}</p>
