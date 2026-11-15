@@ -44,7 +44,7 @@ export function OfferingCard({ offering, index }: { offering: Offering; index: n
         </Link>
         <Link
           href={`/contact?service=${offering.slug}`}
-          className="rounded-full border border-accent/40 px-4 py-2 text-sm font-semibold text-accent transition-colors hover:bg-accent hover:text-deep"
+          className="rounded-full border border-cta-400/50 px-4 py-2 text-sm font-semibold text-cta-400 transition-colors hover:border-cta hover:bg-cta hover:text-white"
         >
           Get Started<span className="sr-only"> with {offering.title}</span>
         </Link>

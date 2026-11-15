@@ -34,7 +34,7 @@ export function Field({ label, children, className }: { label: string; children:
 }
 
 export const input = "w-full rounded-lg border border-line bg-surface px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/15";
-export const btn = "inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-deep transition hover:bg-accent-600 disabled:opacity-60";
+export const btn = "inline-flex items-center justify-center gap-2 rounded-lg bg-cta px-4 py-2 text-sm font-semibold text-white transition hover:bg-cta-600 disabled:opacity-60";
 export const btnGhost = "inline-flex items-center justify-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-semibold text-white transition hover:border-accent hover:text-accent";
 
 export function Empty({ children }: { children: ReactNode }) {

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 type Variant = "primary" | "secondary" | "ghost" | "light";
 
 const styles: Record<Variant, string> = {
-  primary: "bg-accent text-deep shadow-[0_8px_24px_-8px_rgba(255,122,48,.6)] hover:bg-accent-600",
+  primary: "bg-gradient-to-r from-cta to-cta-400 text-white shadow-[0_8px_28px_-8px_rgba(29,111,242,.7)] hover:from-cta-600 hover:to-cta",
   secondary: "border border-white/20 text-white hover:border-white/40 hover:bg-white/5",
   ghost: "border border-line text-white hover:border-accent hover:text-accent",
   light: "bg-white text-deep hover:bg-white/90",

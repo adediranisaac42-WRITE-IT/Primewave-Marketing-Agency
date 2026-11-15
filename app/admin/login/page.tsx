@@ -30,7 +30,7 @@ function LoginForm() {
       <label className="mt-6 block"><span className="label">Email</span><input name="email" type="email" required autoComplete="email" className="field" /></label>
       <label className="mt-4 block"><span className="label">Password</span><input name="password" type="password" required autoComplete="current-password" className="field" /></label>
       {error && <p role="alert" className="mt-4 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</p>}
-      <button disabled={loading} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-accent py-3 font-semibold text-deep hover:bg-accent-600 disabled:opacity-60">
+      <button disabled={loading} className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-cta py-3 font-semibold text-white hover:bg-cta-600 disabled:opacity-60">
         {loading && <Loader2 className="h-4 w-4 animate-spin" />}Sign in
       </button>
     </form>

@@ -47,9 +47,9 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80"
+            className="glass inline-flex items-center gap-2.5 rounded-full py-2 pl-2.5 pr-4 text-xs font-semibold uppercase tracking-[0.2em] text-white/80"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {site.tagline}
+            <Image src="/images/primewave-logo-mark.webp" alt="" width={22} height={21} className="h-5 w-auto" /> {site.tagline}
           </motion.p>
 
           <h1

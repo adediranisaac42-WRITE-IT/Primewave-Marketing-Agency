@@ -11,6 +11,7 @@ const config: Config = {
         surface: "#101827", // sections, cards, admin panels
         navy: { DEFAULT: "#17243A", 950: "#080D16", 900: "#101827", 800: "#1E2D47" }, // raised surfaces
         accent: { DEFAULT: "#FF7A30", 600: "#E8661D", 300: "#FFB088" }, // CTAs, active states, highlights
+        cta: { DEFAULT: "#1D6FF2", 600: "#1559CC", 400: "#4C8DFF" }, // blue call-to-action buttons (matches logo)
         muted: "#9AA6B5", // supporting text
         line: "#1F2B3E", // borders and dividers
       },
