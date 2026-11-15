@@ -22,7 +22,7 @@ export function Accordion({ items, dark = false }: { items: { q: string; a: stri
                 className={cn("flex w-full items-center justify-between gap-6 py-6 text-left text-lg font-semibold transition-colors", dark ? "text-white hover:text-accent" : "text-white hover:text-accent")}
               >
                 {it.q}
-                <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-all duration-300", isOpen ? "rotate-45 border-accent bg-accent text-deep" : dark ? "border-white/20" : "border-line")}>
+                <span className={cn("grid h-9 w-9 shrink-0 place-items-center rounded-full border transition-all duration-300", isOpen ? "rotate-45 border-accent bg-accent text-white" : dark ? "border-white/20" : "border-line")}>
                   <Plus className="h-4 w-4" />
                 </span>
               </button>

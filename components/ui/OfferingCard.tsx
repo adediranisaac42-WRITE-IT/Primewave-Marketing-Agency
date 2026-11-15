@@ -13,7 +13,7 @@ export function OfferingCard({ offering, index }: { offering: Offering; index: n
   const rx = useSpring(useTransform(my, [0, 1], [3, -3]), { stiffness: 200, damping: 20 });
   const ry = useSpring(useTransform(mx, [0, 1], [-3, 3]), { stiffness: 200, damping: 20 });
   const bg = useTransform([mx, my], ([x, y]) =>
-    `radial-gradient(380px circle at ${(x as number) * 100}% ${(y as number) * 100}%, rgba(255,122,48,.12), transparent 60%)`
+    `radial-gradient(380px circle at ${(x as number) * 100}% ${(y as number) * 100}%, rgba(47,134,255,.12), transparent 60%)`
   );
   const num = String(index + 1).padStart(2, "0");
 
@@ -30,7 +30,7 @@ export function OfferingCard({ offering, index }: { offering: Offering; index: n
     >
       <motion.div aria-hidden className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: bg }} />
       <div className="relative flex items-start justify-between">
-        <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-deep">
+        <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-white">
           <Icon name={offering.icon} className="h-5 w-5" />
         </span>
         <span className="font-display text-sm font-semibold text-muted/60">{num}</span>

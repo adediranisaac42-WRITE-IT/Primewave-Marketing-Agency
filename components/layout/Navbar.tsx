@@ -110,7 +110,7 @@ export function Navbar() {
                     {services.map((s) => (
                       <li key={s.slug}>
                         <Link href={s.href} className="group flex gap-4 rounded-2xl p-4 transition-colors hover:bg-white/5">
-                          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 text-accent transition-colors group-hover:bg-accent group-hover:text-deep">
+                          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/10 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                             <Icon name={s.icon} className="h-5 w-5" />
                           </span>
                           <span>

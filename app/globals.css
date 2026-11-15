@@ -7,8 +7,8 @@
   html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   body { @apply bg-surface text-white font-sans; }
   h1, h2, h3, h4 { @apply font-display tracking-tight text-balance; }
-  ::selection { background: #FF7A30; color: #fff; }
-  :focus-visible { outline: 2px solid #FF7A30; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #2F86FF; color: #fff; }
+  :focus-visible { outline: 2px solid #2F86FF; outline-offset: 3px; border-radius: 6px; }
   html.lenis, html.lenis body { height: auto; }
   .lenis.lenis-smooth { scroll-behavior: auto !important; }
 }
@@ -24,7 +24,7 @@
     @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
   }
   .text-gradient {
-    @apply bg-gradient-to-r from-white via-[#FFD9C2] to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white via-[#CFE2FF] to-accent bg-clip-text text-transparent;
   }
   .field {
     @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-[15px] text-white placeholder:text-muted/70

@@ -36,7 +36,7 @@ export function HeroVisual() {
       {/* Connection lines */}
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 400" fill="none">
         <defs>
-          <linearGradient id="ln" x1="0" x2="1"><stop stopColor="#FF7A30" stopOpacity=".1" /><stop offset=".5" stopColor="#FF7A30" /><stop offset="1" stopColor="#FF7A30" stopOpacity=".1" /></linearGradient>
+          <linearGradient id="ln" x1="0" x2="1"><stop stopColor="#2F86FF" stopOpacity=".1" /><stop offset=".5" stopColor="#2F86FF" /><stop offset="1" stopColor="#2F86FF" stopOpacity=".1" /></linearGradient>
         </defs>
         {["M110 300 C 180 260, 200 220, 250 200", "M390 90 C 340 130, 300 170, 250 200", "M400 320 C 340 290, 300 240, 250 200"].map((d, i) => (
           <motion.path key={d} d={d} stroke="url(#ln)" strokeWidth="1.5" strokeDasharray="4 6"
@@ -88,7 +88,7 @@ export function HeroVisual() {
           <div className="mt-3 grid grid-cols-3 gap-1.5">
             {[0, 1, 2].map((i) => <div key={i} className="aspect-square rounded-lg bg-gradient-to-br from-white/15 to-white/[0.03]" />)}
           </div>
-          <div className="mt-3 flex items-center justify-between rounded-lg bg-accent px-3 py-2 text-[11px] font-semibold text-deep">
+          <div className="mt-3 flex items-center justify-between rounded-lg bg-accent px-3 py-2 text-[11px] font-semibold text-white">
             Checkout <span>→</span>
           </div>
         </motion.div>

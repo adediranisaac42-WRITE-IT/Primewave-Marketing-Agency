@@ -39,7 +39,7 @@ export function Cursor() {
         aria-hidden
         className="pointer-events-none fixed left-0 top-0 z-[99] -translate-x-1/2 -translate-y-1/2 rounded-full border border-accent/50"
         style={{ x: rx, y: ry }}
-        animate={{ width: hover ? 52 : 30, height: hover ? 52 : 30, backgroundColor: hover ? "rgba(255,122,48,0.08)" : "rgba(255,122,48,0)" }}
+        animate={{ width: hover ? 52 : 30, height: hover ? 52 : 30, backgroundColor: hover ? "rgba(47,134,255,0.08)" : "rgba(47,134,255,0)" }}
         transition={{ duration: 0.25 }}
       />
     </>

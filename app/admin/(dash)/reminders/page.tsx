@@ -25,7 +25,7 @@ export default async function RemindersPage() {
             return (
               <li key={r.id} className={`flex items-center gap-4 rounded-xl border bg-surface p-4 ${!r.done && r.due_at < now ? "border-red-200" : "border-line"}`}>
                 <form action={toggleReminder}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="done" value={String(!r.done)} />
-                  <button aria-label={r.done ? "Mark as not done" : "Mark as done"} className={`grid h-6 w-6 place-items-center rounded-md border ${r.done ? "border-accent bg-accent text-deep" : "border-line"}`}>{r.done ? "✓" : ""}</button></form>
+                  <button aria-label={r.done ? "Mark as not done" : "Mark as done"} className={`grid h-6 w-6 place-items-center rounded-md border ${r.done ? "border-accent bg-accent text-white" : "border-line"}`}>{r.done ? "✓" : ""}</button></form>
                 <div className={r.done ? "text-muted line-through" : ""}>
                   <p className="font-medium">{r.title}</p>
                   <p className="text-xs text-muted">{fmtDate(r.due_at, true)}{lead && <> · <Link href={`/admin/leads/${lead.id}`} className="text-accent">{lead.full_name}</Link></>}</p>

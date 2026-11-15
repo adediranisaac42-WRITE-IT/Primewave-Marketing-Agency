@@ -3,8 +3,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import { AdditiveBlending, type Group, type Points } from "three";
 
-const ORANGE = "#FF7A30";
-const ORANGE_SOFT = "#FFB088";
+const ORANGE = "#2F86FF";
+const ORANGE_SOFT = "#8DBBFF";
 
 /** Deterministic pseudo-random so the ring looks the same on every load. */
 const rand = (i: number) => {

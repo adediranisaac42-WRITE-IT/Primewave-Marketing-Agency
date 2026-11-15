@@ -27,7 +27,7 @@ export function Sidebar({ email, signOut }: { email: string; signOut: () => Prom
         {links.map(({ href, label, icon: I }) => {
           const active = href === "/admin" ? path === "/admin" : path.startsWith(href);
           return (
-            <Link key={href} href={href} className={cn("flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition", active ? "bg-accent text-deep" : "text-white/65 hover:bg-white/5 hover:text-white")}>
+            <Link key={href} href={href} className={cn("flex shrink-0 items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition", active ? "bg-accent text-white" : "text-white/65 hover:bg-white/5 hover:text-white")}>
               <I className="h-4 w-4" />{label}
             </Link>
           );

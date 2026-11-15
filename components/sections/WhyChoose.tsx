@@ -29,7 +29,7 @@ export function WhyChoose() {
         <Stagger className="grid gap-4 sm:grid-cols-2">
           {reasons.map((r) => (
             <StaggerItem key={r.title} className="glass group rounded-3xl p-7 transition-all duration-500 hover:border-accent/40 hover:bg-white/[0.07]">
-              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-deep">
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-colors duration-500 group-hover:bg-accent group-hover:text-white">
                 <Icon name={r.icon} className="h-5 w-5" />
               </span>
               <h3 className="mt-6 text-lg font-semibold text-white">{r.title}</h3>

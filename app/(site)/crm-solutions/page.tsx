@@ -79,7 +79,7 @@ export default function CrmPage() {
           <Stagger className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {crmPillars.map((p) => (
               <StaggerItem key={p.title} className="glass group rounded-3xl p-8 transition-colors duration-500 hover:border-accent/40">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-colors group-hover:bg-accent group-hover:text-deep">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-accent/15 text-accent transition-colors group-hover:bg-accent group-hover:text-white">
                   <Icon name={p.icon} className="h-5 w-5" />
                 </span>
                 <h3 className="mt-6 text-xl font-semibold text-white">{p.title}</h3>

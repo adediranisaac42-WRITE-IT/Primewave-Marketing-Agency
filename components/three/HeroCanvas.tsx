@@ -21,7 +21,7 @@ function canUseWebGL() {
 }
 
 const Fallback = () => (
-  <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(255,122,48,.28),transparent_65%)]" />
+  <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle,rgba(47,134,255,.28),transparent_65%)]" />
 );
 
 /**
