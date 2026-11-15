@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { Button } from "@/components/ui/Button";
+import { ctas } from "@/lib/site";
 
 export function FinalCta({
   title = "Ready to Build Something That Moves Your Business Forward?",
@@ -17,8 +18,9 @@ export function FinalCta({
         <TextReveal as="h2" text={title} className="mx-auto max-w-4xl text-4xl font-bold leading-tight text-white md:text-6xl" highlight={["Forward?"]} />
         <Reveal delay={0.3}>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/65">{body}</p>
-          <div className="mt-10 flex justify-center">
-            <Button href="/contact" variant="light">{cta}</Button>
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <Button href={ctas.project.href} variant="light">{cta}</Button>
+            <Button href={ctas.call.href} variant="secondary" arrow={false}>Book a Strategy Call</Button>
           </div>
         </Reveal>
       </div>

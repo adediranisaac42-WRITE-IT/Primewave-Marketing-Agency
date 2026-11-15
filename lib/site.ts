@@ -23,14 +23,22 @@ export const site = {
     facebook: null as string | null,
     fiverr: null as string | null,
   },
-  markets: ["United Kingdom", "United States", "International"],
+  markets: ["United States", "United Kingdom", "Canada", "International markets"],
 } as const;
 
+/**
+ * Main navigation. "Case Studies" and "Insights" are added here once their pages
+ * exist (Phase 4), so the menu never links to a missing page.
+ */
 export const nav = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services", mega: true },
-  { label: "CRM Solutions", href: "/crm-solutions" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ] as const;
+
+export const ctas = {
+  project: { label: "Start a Project", href: "/contact?intent=project" },
+  call: { label: "Book a Strategy Call", href: "/contact?intent=call" },
+} as const;

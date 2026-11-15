@@ -4,12 +4,12 @@ import { Icon } from "@/components/ui/Icon";
 import type { IconKey } from "@/lib/data/services";
 
 const reasons: { icon: IconKey; title: string; body: string }[] = [
-  { icon: "compass", title: "Strategic Approach", body: "Every recommendation is tied to a business objective — not activity for its own sake." },
-  { icon: "chart", title: "Data-Informed Decisions", body: "We measure what matters and let evidence guide the next step." },
-  { icon: "heart", title: "Customer-Centric Solutions", body: "We design around your customers' needs, behaviour and journey." },
-  { icon: "layers", title: "Integrated Digital Services", body: "Marketing, web, e-commerce and CRM working together, not in silos." },
-  { icon: "gauge", title: "Performance Optimization", body: "Continuous testing and refinement to improve results over time." },
-  { icon: "handshake", title: "Long-Term Relationships", body: "We aim to be the partner you keep as your business grows." },
+  { icon: "compass", title: "Strategy-Led Execution", body: "Every task traces back to a business goal, not activity for its own sake." },
+  { icon: "gauge", title: "Conversion-Focused Solutions", body: "Design and copy decisions are made around what helps visitors buy." },
+  { icon: "layers", title: "Integrated Marketing", body: "Store, email, ads and SEO planned together so each channel supports the others." },
+  { icon: "target", title: "Customer Journey Optimization", body: "We map how customers find, compare and buy, then remove the friction." },
+  { icon: "handshake", title: "Transparent Communication", body: "Clear scope, regular updates and honest reporting on what is and isn't working." },
+  { icon: "refresh", title: "Continuous Improvement", body: "Launch is the start: we test, measure and refine over time." },
 ];
 
 export function WhyChoose() {

@@ -4,15 +4,16 @@ import { useRef } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const defaultSteps = [
-  { title: "Discover", body: "Understand the business, goals and challenges." },
-  { title: "Strategize", body: "Develop a tailored digital growth strategy." },
-  { title: "Implement", body: "Execute the agreed solutions." },
-  { title: "Optimize", body: "Review performance and improve results." },
+  { title: "Discover", body: "We learn your business, customers, goals and how your site performs today." },
+  { title: "Strategize", body: "You get a prioritised plan with scope, timeline and how success will be measured." },
+  { title: "Design", body: "Layouts, visuals and customer journeys shaped around how your buyers decide." },
+  { title: "Implement", body: "We build, launch and connect everything, with regular progress updates." },
+  { title: "Optimize", body: "We review the data and refine, so results keep improving after launch." },
 ];
 
 /** Scroll-linked timeline: the connecting line draws as you scroll through the steps. */
 export function Process({
-  steps = defaultSteps, eyebrow = "Our Process", title = "A clear path from idea to impact.",
+  steps = defaultSteps, eyebrow = "Our Process", title = "Discover. Strategize. Design. Implement. Optimize.",
 }: { steps?: { title: string; body: string }[]; eyebrow?: string; title?: string }) {
   const ref = useRef<HTMLOListElement>(null);
   const reduce = useReducedMotion();

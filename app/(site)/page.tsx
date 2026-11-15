@@ -1,29 +1,29 @@
 import { Hero } from "@/components/sections/Hero";
-import { Capabilities } from "@/components/sections/Capabilities";
+import { Marquee } from "@/components/sections/Marquee";
 import { AboutIntro } from "@/components/sections/AboutIntro";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { WhyChoose } from "@/components/sections/WhyChoose";
+import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
 import { Process } from "@/components/sections/Process";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
-import { Founder } from "@/components/sections/Founder";
+import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
-import { homeFaqs } from "@/lib/data/faqs";
 
+/**
+ * Homepage, in the order of the spec. Case studies (8) and insights (11) are
+ * added in Phase 4 when that content exists; testimonials hide themselves in
+ * production until genuine reviews are added.
+ */
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Capabilities />
+      <Marquee />
       <AboutIntro />
-      <ServicesGrid />
-      <WhyChoose />
+      <OfferingsGrid />
       <Process />
       <ProjectsShowcase limit={4} />
-      <Founder />
+      <WhyChoose />
       <Testimonials />
-      <Faq items={homeFaqs} />
       <FinalCta />
     </>
   );

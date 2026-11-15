@@ -6,7 +6,8 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   const reduce = useReducedMotion();
-  const headline = ["Turning", "Digital", "Potential", "Into", "Business", "Growth."];
+  const title = "Digital Experiences That Move Businesses Forward.";
+  const headline = title.split(" ");
   return (
     <section className="dark-section relative isolate overflow-hidden bg-deep pb-20 pt-36 md:pb-28 md:pt-44">
       {/* Background */}
@@ -26,11 +27,11 @@ export function Hero() {
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> {site.tagline}
           </motion.p>
 
-          <h1 aria-label={site.message} className="mt-8 font-display text-[2.75rem] font-extrabold leading-[1.02] tracking-tightest text-white sm:text-6xl xl:text-[5.2rem]">
+          <h1 aria-label={title} className="mt-8 font-display text-[2.75rem] font-extrabold leading-[1.02] tracking-tightest text-white sm:text-6xl xl:text-[5.2rem]">
             {headline.map((w, i) => (
               <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.1em] align-bottom">
                 <motion.span
-                  className={`inline-block ${w === "Growth." || w === "Business" ? "text-gradient" : ""}`}
+                  className={`inline-block ${w === "Forward." || w === "Move" ? "text-gradient" : ""}`}
                   initial={reduce ? false : { y: "110%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 1, delay: 0.3 + i * 0.07, ease: [0.22, 1, 0.36, 1] }}
@@ -45,22 +46,22 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.85 }}
             className="mt-7 max-w-xl text-lg leading-relaxed text-white/65 md:text-xl"
           >
-            We help ambitious businesses attract the right audience, build powerful digital experiences and turn opportunities into measurable business growth.
+            We build high-performing websites and intelligent marketing systems that help ambitious brands attract customers, improve conversions and scale with confidence.
           </motion.p>
 
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }}
             className="mt-10 flex flex-col gap-3 sm:flex-row"
           >
-            <Button href="/services">Explore Our Services</Button>
-            <Button href="/contact" variant="secondary">Book a Consultation</Button>
+            <Button href="/contact?intent=project" className="uppercase tracking-wide">Start Your Project</Button>
+            <Button href="/portfolio" variant="secondary" className="uppercase tracking-wide">Explore Our Work</Button>
           </motion.div>
 
           <motion.ul
             initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
             className="mt-12 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/45"
           >
-            {["Serving the UK", "United States", "International markets"].map((m) => (
+            {site.markets.map((m) => (
               <li key={m} className="flex items-center gap-2"><span className="h-1 w-1 rounded-full bg-accent" />{m}</li>
             ))}
           </motion.ul>

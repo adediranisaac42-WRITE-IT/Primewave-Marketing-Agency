@@ -1,6 +1,7 @@
 "use client";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion";
 import { BarChart3, CheckCircle2, Mail, ShoppingBag, Users } from "lucide-react";
+import { HeroCanvas } from "@/components/three/HeroCanvas";
 
 /**
  * Illustrative product-style visual: analytics, e-commerce, CRM pipeline and automation,
@@ -29,6 +30,9 @@ export function HeroVisual() {
       className="relative mx-auto aspect-[5/4] w-full max-w-[620px]"
       aria-hidden
     >
+      {/* 3D layer (desktop only, lazy-loaded) */}
+      <HeroCanvas />
+
       {/* Connection lines */}
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 500 400" fill="none">
         <defs>

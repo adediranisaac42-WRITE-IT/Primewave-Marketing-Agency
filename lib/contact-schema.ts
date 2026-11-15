@@ -1,6 +1,9 @@
+// Keep in step with lib/data/catalog.ts (the 10 services) plus CRM and "not sure".
 export const serviceOptions = [
-  "Digital Marketing", "E-commerce Growth / Shopify", "CRM Solutions", "Email & SMS Marketing",
-  "Website Design & Development", "Business Growth Strategy", "Not sure yet",
+  "Shopify Website Design & Development", "E-commerce Website Redesign", "Shopify Store Management",
+  "Conversion Rate Optimization", "SEO & Organic Growth", "Klaviyo Email Marketing & Automation",
+  "Social Media Marketing", "Paid Advertising", "Product Research & Product Listing",
+  "E-commerce Growth Strategy", "CRM Solutions", "Not sure yet",
 ] as const;
 
 export const budgetOptions = [

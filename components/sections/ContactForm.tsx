@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { budgetOptions, serviceOptions, validateContact, type ContactInput } from "@/lib/contact-schema";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { offerings } from "@/lib/data/catalog";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -13,7 +14,22 @@ export function ContactForm() {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<Partial<Record<keyof ContactInput, string>>>({});
   const startedAt = useRef(0);
+  const formRef = useRef<HTMLFormElement>(null);
   useEffect(() => { startedAt.current = Date.now(); }, []);
+
+  // Pre-fill from links such as /contact?service=paid-advertising or /contact?intent=call.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const form = formRef.current;
+    if (!form) return;
+    const offer = offerings.find((o) => o.slug === params.get("service"));
+    const select = form.elements.namedItem("service");
+    if (offer && select instanceof HTMLSelectElement) select.value = offer.title;
+    const msg = form.elements.namedItem("message");
+    if (params.get("intent") === "call" && msg instanceof HTMLTextAreaElement && !msg.value) {
+      msg.value = "I'd like to book a strategy call. A good time for me is: ";
+    }
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -67,7 +83,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-3xl border border-line bg-surface p-6 shadow-card md:p-10">
+    <form ref={formRef} onSubmit={onSubmit} noValidate className="rounded-3xl border border-line bg-surface p-6 shadow-card md:p-10">
       {/* Honeypot — hidden from humans and assistive tech */}
       <div aria-hidden className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company_fax">Leave this empty</label>

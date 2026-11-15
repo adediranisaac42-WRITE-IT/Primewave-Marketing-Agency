@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { nav } from "@/lib/site";
+import { ctas, nav } from "@/lib/site";
 import { services } from "@/lib/data/services";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
@@ -78,7 +78,8 @@ export function Navbar() {
               )}
             </ul>
             <div className="flex items-center gap-3">
-              <Button href="/contact" className="hidden !px-5 !py-2.5 text-sm sm:inline-flex">Book a Consultation</Button>
+              <Button href={ctas.call.href} variant="secondary" arrow={false} className="hidden !px-5 !py-2.5 text-sm xl:inline-flex">{ctas.call.label}</Button>
+              <Button href={ctas.project.href} className="hidden !px-5 !py-2.5 text-sm sm:inline-flex">{ctas.project.label}</Button>
               <button aria-label="Open menu" aria-expanded={mobile} onClick={() => setMobile(true)} className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-white lg:hidden">
                 <Menu className="h-5 w-5" />
               </button>
@@ -164,7 +165,10 @@ export function Navbar() {
                   </motion.li>
                 ))}
               </ul>
-              <Button href="/contact" className="mt-auto w-full">Book a Consultation</Button>
+              <div className="mt-auto grid gap-3 pt-8">
+                <Button href={ctas.project.href} className="w-full">{ctas.project.label}</Button>
+                <Button href={ctas.call.href} variant="secondary" arrow={false} className="w-full">{ctas.call.label}</Button>
+              </div>
             </motion.div>
           </motion.div>
         )}
