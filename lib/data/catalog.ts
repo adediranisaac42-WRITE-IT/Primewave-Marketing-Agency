@@ -7,6 +7,8 @@ export type Offering = {
   short: string;
   icon: IconKey;
   learnMore: string;
+  /** Card header photo in /public/images/services. */
+  image: string;
 };
 
 export const offerings: Offering[] = services.map((s) => ({
@@ -15,6 +17,7 @@ export const offerings: Offering[] = services.map((s) => ({
   short: s.short,
   icon: s.icon,
   learnMore: s.href,
+  image: `/images/services/${s.slug}.webp`,
 }));
 
 export const marqueeItems = [
