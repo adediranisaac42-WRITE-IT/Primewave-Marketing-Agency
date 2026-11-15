@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { AboutIntro } from "@/components/sections/AboutIntro";
 import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
+import { SeasonSpotlight } from "@/components/sections/SeasonSpotlight";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { WhyChoose } from "@/components/sections/WhyChoose";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Marquee />
       <AboutIntro />
       <OfferingsGrid />
+      <SeasonSpotlight />
       <ProcessSteps />
       <ProjectsShowcase limit={4} />
       <WhyChoose />
