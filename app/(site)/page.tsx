@@ -4,7 +4,7 @@ import { AboutIntro } from "@/components/sections/AboutIntro";
 import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
 import { SeasonSpotlight } from "@/components/sections/SeasonSpotlight";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
-import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
+import { PortfolioShowcase } from "@/components/sections/PortfolioShowcase";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -15,6 +15,9 @@ import { FinalCta } from "@/components/sections/FinalCta";
  * added in Phase 4 when that content exists; testimonials hide themselves in
  * production until genuine reviews are added.
  */
+// Portfolio content comes from Supabase; refresh at most once a minute (admin edits also revalidate).
+export const revalidate = 60;
+
 export default function HomePage() {
   return (
     <>
@@ -24,7 +27,7 @@ export default function HomePage() {
       <OfferingsGrid />
       <SeasonSpotlight />
       <ProcessSteps />
-      <ProjectsShowcase limit={4} />
+      <PortfolioShowcase limit={5} />
       <WhyChoose />
       <Team />
       <Testimonials />

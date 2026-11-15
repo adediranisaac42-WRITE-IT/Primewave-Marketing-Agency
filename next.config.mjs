@@ -9,7 +9,13 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  images: { formats: ["image/avif", "image/webp"] },
+  // Admin portfolio uploads (images up to 5 MB) go through a server action.
+  experimental: { serverActions: { bodySizeLimit: "6mb" } },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    // Portfolio images uploaded through the admin dashboard live in Supabase Storage.
+    remotePatterns: [{ protocol: "https", hostname: "*.supabase.co", pathname: "/storage/v1/object/public/**" }],
+  },
   async redirects() {
     const moved = {
       "digital-marketing": "social-media-marketing",

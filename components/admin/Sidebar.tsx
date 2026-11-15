@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Bell, Briefcase, CalendarDays, Columns3, Inbox, LogOut, Users, ExternalLink } from "lucide-react";
+import { BarChart3, Bell, Briefcase, CalendarDays, Columns3, Inbox, LayoutGrid, LogOut, Users, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,7 @@ const links = [
   { href: "/admin/consultations", label: "Consultations", icon: CalendarDays },
   { href: "/admin/projects", label: "Projects", icon: Briefcase },
   { href: "/admin/reminders", label: "Reminders", icon: Bell },
+  { href: "/admin/portfolio", label: "Portfolio", icon: LayoutGrid },
 ];
 
 export function Sidebar({ email, signOut }: { email: string; signOut: () => Promise<void> }) {
