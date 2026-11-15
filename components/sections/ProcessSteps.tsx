@@ -55,7 +55,21 @@ export function ProcessSteps() {
 
   return (
     <section className="section relative isolate overflow-hidden bg-deep">
-      <div aria-hidden className="absolute -right-40 top-20 -z-10 h-[520px] w-[520px] rounded-full bg-cta/15 blur-[160px]" />
+      {/* Background photo: dark left side sits behind the heading, team shows through on the right */}
+      <div aria-hidden className="absolute inset-0 -z-10">
+        <Image
+          src="/images/process-bg.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[70%_center] opacity-70"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,#080D16_0%,rgba(8,13,22,.92)_35%,rgba(8,13,22,.55)_65%,rgba(8,13,22,.45)_100%)]" />
+        <div className="absolute inset-0 bg-deep/40 lg:hidden" />
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-deep to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-deep to-transparent" />
+        <div className="absolute -right-40 top-20 h-[520px] w-[520px] rounded-full bg-cta/15 blur-[160px]" />
+      </div>
 
       <div className="container grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div className="lg:sticky lg:top-32 lg:self-start">
@@ -78,7 +92,7 @@ export function ProcessSteps() {
           </Reveal>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-surface/70 p-4 shadow-card backdrop-blur-sm md:p-6">
+        <div className="rounded-3xl border border-white/10 bg-surface/75 p-4 shadow-card backdrop-blur-md md:p-6">
           <div ref={listRef} className="relative">
             {/* Track + scroll progress, running through the centre of the photos */}
             <div aria-hidden className="absolute bottom-[68px] left-[48px] top-[68px] w-px bg-line md:bottom-[76px] md:left-[56px] md:top-[76px]" />
