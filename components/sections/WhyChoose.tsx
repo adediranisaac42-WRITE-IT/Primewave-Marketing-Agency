@@ -22,8 +22,8 @@ const featured = [
     icon: Megaphone,
     title: "Integrated Marketing",
     body: "We connect the right channels, campaigns and tools to attract, engage and grow your audience.",
-    image: "/images/why/marketing.webp",
-    alt: "Marketer studying campaign analytics dashboards",
+    image: "/images/about/customer-relationship-management.webp",
+    alt: "Marketing specialist managing customer engagement at her workstation",
   },
 ];
 
@@ -55,8 +55,8 @@ export function WhyChoose() {
           <Reveal delay={0.15} className="relative mt-10 flex-1">
             <div className="group relative h-full min-h-[300px] overflow-hidden rounded-3xl border border-white/10 shadow-[0_30px_70px_-30px_rgba(29,111,242,.55)]">
               <Image
-                src="/images/why/team.webp"
-                alt="Marketing team collaborating around a laptop"
+                src="/images/about/digital-marketing.webp"
+                alt="Strategist talking colleagues through campaign analytics on a large screen"
                 fill
                 sizes="(min-width: 1024px) 40vw, 92vw"
                 className="object-cover object-center transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05] motion-reduce:group-hover:scale-100"
