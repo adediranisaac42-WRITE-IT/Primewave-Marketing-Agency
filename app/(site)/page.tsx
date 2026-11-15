@@ -5,6 +5,7 @@ import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
 import { Process } from "@/components/sections/Process";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { WhyChoose } from "@/components/sections/WhyChoose";
+import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
       <Process />
       <ProjectsShowcase limit={4} />
       <WhyChoose />
+      <Team />
       <Testimonials />
       <FinalCta />
     </>

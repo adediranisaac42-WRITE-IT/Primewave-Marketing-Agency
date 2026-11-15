@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { Founder } from "@/components/sections/Founder";
 import { WhyChoose } from "@/components/sections/WhyChoose";
+import { Team } from "@/components/sections/Team";
 import { Process } from "@/components/sections/Process";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -54,6 +55,7 @@ export default function AboutPage() {
         </div>
       </section>
       <div id="founder"><Founder cta={false} /></div>
+      <Team />
       <WhyChoose />
       <Process />
       <FinalCta />
