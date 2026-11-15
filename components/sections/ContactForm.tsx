@@ -12,6 +12,8 @@ type Status = "idle" | "sending" | "success" | "error";
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
+  const [reference, setReference] = useState("");
+  const [confirmationSent, setConfirmationSent] = useState(false);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactInput, string>>>({});
   const startedAt = useRef(0);
   const formRef = useRef<HTMLFormElement>(null);
@@ -54,6 +56,8 @@ export function ContactForm() {
         if (json.fields) setErrors(json.fields);
         throw new Error(json.error ?? "Something went wrong.");
       }
+      setReference(typeof json.ref === "string" ? json.ref : "");
+      setConfirmationSent(json.confirmationSent === true);
       setStatus("success");
       form.reset();
     } catch (err) {
@@ -76,7 +80,12 @@ export function ContactForm() {
         className="flex flex-col items-center rounded-3xl border border-line bg-surface p-12 text-center shadow-card">
         <span className="grid h-16 w-16 place-items-center rounded-full bg-accent/10 text-accent"><CheckCircle2 className="h-8 w-8" /></span>
         <h2 className="mt-6 text-3xl font-bold text-white">Thank you — we&apos;ve received your enquiry.</h2>
-        <p className="mt-3 max-w-md text-muted">We&apos;ll review your project details and get back to you to arrange a consultation.</p>
+        {reference && (
+          <p className="mt-4 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-semibold text-accent-300">
+            Your reference: {reference}
+          </p>
+        )}
+        <p className="mt-3 max-w-md text-muted">We&apos;ll review your project details and get back to you to arrange a consultation.{confirmationSent && " A confirmation is on its way to your inbox."}</p>
         <Button onClick={() => setStatus("idle")} variant="ghost" className="mt-8" arrow={false}>Send another enquiry</Button>
       </motion.div>
     );

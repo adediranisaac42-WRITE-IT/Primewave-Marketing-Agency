@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { validateContact } from "@/lib/contact-schema";
 import { createServiceClient } from "@/lib/supabase/service";
+import { adminEmail, sendMail } from "@/lib/services/email";
+import { leadConfirmationEmail, newLeadAdminEmail } from "@/lib/services/lead-emails";
 
 // Best-effort in-memory rate limit (per server instance). For stricter limits use Upstash/Vercel KV.
 const hits = new Map<string, number[]>();
@@ -33,15 +35,30 @@ export async function POST(req: Request) {
 
   try {
     const supabase = createServiceClient();
-    const { error } = await supabase.from("leads").insert({
-      ...data,
-      business_name: data.business_name || null,
-      website_url: data.website_url || null,
-      source: "website_contact_form",
-      user_agent: req.headers.get("user-agent")?.slice(0, 300) ?? null,
-    });
+    const { data: row, error } = await supabase
+      .from("leads")
+      .insert({
+        ...data,
+        business_name: data.business_name || null,
+        website_url: data.website_url || null,
+        source: "website_contact_form",
+        user_agent: req.headers.get("user-agent")?.slice(0, 300) ?? null,
+      })
+      .select("ref")
+      .single();
     if (error) throw error;
-    return NextResponse.json({ ok: true });
+
+    // Emails are best-effort: the lead is already saved, so a mail failure never fails the request.
+    const lead = { ...data, ref: row.ref as string, business_name: data.business_name || null, website_url: data.website_url || null };
+    const admin = newLeadAdminEmail(lead);
+    const confirm = leadConfirmationEmail(lead);
+    const to = adminEmail();
+    const [, confirmation] = await Promise.all([
+      to ? sendMail({ to, replyTo: lead.email, ...admin }) : Promise.resolve({ sent: false }),
+      sendMail({ to: lead.email, ...confirm }),
+    ]);
+
+    return NextResponse.json({ ok: true, ref: lead.ref, confirmationSent: confirmation.sent });
   } catch (e) {
     console.error("[contact] insert failed", e);
     return NextResponse.json({ error: "Something went wrong on our side. Please try again shortly." }, { status: 500 });
