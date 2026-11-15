@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body { @apply bg-surface text-white font-sans; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight text-balance; }
+  ::selection { background: #FF7A30; color: #fff; }
+  :focus-visible { outline: 2px solid #FF7A30; outline-offset: 3px; border-radius: 6px; }
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+}
+
+@layer components {
+  .section { @apply py-24 md:py-32; }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+  .eyebrow::before { content: ""; @apply h-px w-6 bg-current; }
+  .dark-section .eyebrow { @apply text-accent; }
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-[#FFD9C2] to-accent bg-clip-text text-transparent;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-surface px-4 py-3 text-[15px] text-white placeholder:text-muted/70
+      transition focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/10;
+  }
+  .label { @apply mb-2 block text-sm font-medium text-white; }
+}
+
+/* Hide the native cursor only when our custom cursor is active (desktop, fine pointer, motion allowed). */
+html.has-custom-cursor, html.has-custom-cursor * { cursor: none !important; }
+html.has-custom-cursor input, html.has-custom-cursor textarea, html.has-custom-cursor select { cursor: text !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
