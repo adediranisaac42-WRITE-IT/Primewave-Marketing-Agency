@@ -56,13 +56,13 @@ export function Team() {
 
         <Reveal className="mt-20 flex justify-center">
           <div className="relative">
-            <div aria-hidden className="absolute inset-0 -z-10 scale-110 rounded-full bg-blue-600/25 blur-3xl" />
+            <div aria-hidden className="absolute inset-0 -z-10 rounded-full bg-blue-600/20 blur-3xl" />
             <Image
               src="/images/primewave-certified-badge.webp"
               alt="Primewave Agency badge: Digital Growth Partner"
-              width={160}
-              height={160}
-              className="h-32 w-32 rounded-[1.75rem] ring-1 ring-white/10 transition-transform duration-500 hover:scale-105 motion-reduce:hover:scale-100 md:h-40 md:w-40"
+              width={435}
+              height={480}
+              className="h-36 w-auto drop-shadow-[0_12px_30px_rgba(37,99,235,.35)] transition-transform duration-500 hover:scale-105 motion-reduce:hover:scale-100 md:h-44"
             />
           </div>
         </Reveal>
