@@ -1,6 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
-import { Process } from "@/components/sections/Process";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Button } from "@/components/ui/Button";
 import { pageMeta } from "@/lib/seo";
@@ -28,7 +28,7 @@ export default function ServicesPage() {
         </div>
       </PageHero>
       <OfferingsGrid heading={false} />
-      <Process />
+      <ProcessSteps />
       <FinalCta />
     </>
   );

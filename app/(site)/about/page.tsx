@@ -2,7 +2,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Founder } from "@/components/sections/Founder";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
-import { Process } from "@/components/sections/Process";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
@@ -83,7 +83,7 @@ export default function AboutPage() {
       <div id="founder"><Founder cta={false} /></div>
       <Team />
       <WhyChoose />
-      <Process />
+      <ProcessSteps />
       <FinalCta />
     </>
   );

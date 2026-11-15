@@ -2,7 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { AboutIntro } from "@/components/sections/AboutIntro";
 import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
-import { Process } from "@/components/sections/Process";
+import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
@@ -21,7 +21,7 @@ export default function HomePage() {
       <Marquee />
       <AboutIntro />
       <OfferingsGrid />
-      <Process />
+      <ProcessSteps />
       <ProjectsShowcase limit={4} />
       <WhyChoose />
       <Team />
