@@ -31,6 +31,7 @@ export function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-widest text-white/40">Services</h2>
           <ul className="mt-5 space-y-3">
             {services.map((s) => <li key={s.slug}><Link href={s.href} className="text-white/70 transition-colors hover:text-white">{s.title}</Link></li>)}
+            <li><Link href="/crm-solutions" className="text-white/70 transition-colors hover:text-white">CRM Solutions</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-3">

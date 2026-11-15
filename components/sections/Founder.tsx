@@ -14,11 +14,11 @@ export function Founder({ cta = true }: { cta?: boolean }) {
           <div className="relative overflow-hidden rounded-[2rem] bg-navy shadow-lift">
             <Parallax offset={24} className="relative aspect-[4/5]">
               <Image
-                src="/images/isaac-adediran.jpg"
+                src="/images/team/isaac-adediran.webp"
                 alt="Isaac Adediran, Founder and CEO of Primewave Marketing Agency"
                 fill
                 sizes="(min-width:1024px) 420px, 90vw"
-                className="scale-110 object-cover object-[50%_20%]"
+                className="scale-110 object-cover object-top"
               />
             </Parallax>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy via-navy/70 to-transparent p-6 pt-20">

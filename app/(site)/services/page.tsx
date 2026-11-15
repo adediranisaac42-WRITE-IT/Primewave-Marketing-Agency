@@ -1,13 +1,15 @@
 import { PageHero } from "@/components/sections/PageHero";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
 import { Process } from "@/components/sections/Process";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { Button } from "@/components/ui/Button";
 import { pageMeta } from "@/lib/seo";
+import { ctas } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Services",
-  description: "Digital marketing, Shopify & e-commerce growth, CRM solutions, Klaviyo email & SMS, website development and growth strategy.",
+  description:
+    "Shopify website development, e-commerce redesign, store management, conversion rate optimization, Shopify SEO, Klaviyo email marketing, social media, paid advertising, product research and e-commerce growth strategy.",
   path: "/services",
 });
 
@@ -16,13 +18,16 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Integrated services for measurable growth."
-        intro="Choose a single service or combine them into one joined-up growth plan. Every engagement starts with understanding your business."
+        title="Ten services. One joined-up growth plan."
+        intro="Choose a single service or combine several. Every engagement starts with understanding your business, your customers and what success looks like for you."
         crumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       >
-        <Button href="/contact">Book a Consultation</Button>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button href={ctas.project.href}>{ctas.project.label}</Button>
+          <Button href={ctas.call.href} variant="secondary" arrow={false}>{ctas.call.label}</Button>
+        </div>
       </PageHero>
-      <ServicesGrid heading={false} />
+      <OfferingsGrid heading={false} />
       <Process />
       <FinalCta />
     </>

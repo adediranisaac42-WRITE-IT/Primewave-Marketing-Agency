@@ -10,6 +10,18 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: { formats: ["image/avif", "image/webp"] },
+  async redirects() {
+    const moved = {
+      "digital-marketing": "social-media-marketing",
+      "ecommerce-growth": "shopify-website-development",
+      "email-sms-marketing": "klaviyo-email-marketing",
+      "website-development": "shopify-website-development",
+      "growth-strategy": "ecommerce-growth-strategy",
+    };
+    return Object.entries(moved).map(([from, to]) => ({
+      source: `/services/${from}`, destination: `/services/${to}`, permanent: true,
+    }));
+  },
   async headers() {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
