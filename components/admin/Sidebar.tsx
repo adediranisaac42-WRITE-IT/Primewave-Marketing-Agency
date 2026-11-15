@@ -20,7 +20,7 @@ export function Sidebar({ email, signOut }: { email: string; signOut: () => Prom
   return (
     <aside className="flex flex-col bg-surface text-white lg:fixed lg:inset-y-0 lg:w-64">
       <div className="flex items-center gap-2.5 px-6 py-6">
-        <Image src="/images/primewave-mark.png" alt="" width={32} height={32} />
+        <Image src="/images/primewave-logo-mark.png" alt="" width={32} height={32} />
         <div><p className="font-display font-bold leading-none">Primewave</p><p className="text-[10px] uppercase tracking-[0.25em] text-accent">Admin CRM</p></div>
       </div>
       <nav aria-label="Admin" className="flex gap-1 overflow-x-auto px-3 pb-3 lg:flex-1 lg:flex-col lg:overflow-visible">

@@ -12,7 +12,7 @@ const orgJsonLd = {
   slogan: site.tagline,
   description: site.description,
   url: site.url,
-  logo: `${site.url}/images/primewave-mark.png`,
+  logo: `${site.url}/images/primewave-logo-mark.png`,
   founder: { "@type": "Person", name: site.founder.name, jobTitle: site.founder.role },
   areaServed: ["GB", "US", "Worldwide"],
   sameAs: Object.values(site.social).filter(Boolean),

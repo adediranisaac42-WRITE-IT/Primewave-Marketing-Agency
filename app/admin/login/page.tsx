@@ -24,7 +24,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={onSubmit} className="w-full max-w-sm rounded-3xl bg-surface p-8 shadow-lift">
-      <Image src="/images/primewave-mark.png" alt="" width={44} height={44} />
+      <Image src="/images/primewave-logo-mark.png" alt="" width={44} height={44} />
       <h1 className="mt-6 text-2xl font-bold text-white">Admin sign in</h1>
       <p className="mt-1 text-sm text-muted">Primewave CRM — authorised users only.</p>
       <label className="mt-6 block"><span className="label">Email</span><input name="email" type="email" required autoComplete="email" className="field" /></label>

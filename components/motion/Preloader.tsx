@@ -25,7 +25,7 @@ export function Preloader() {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="flex flex-col items-center gap-5">
-            <Image src="/images/primewave-mark.png" alt="" width={64} height={64} priority />
+            <Image src="/images/primewave-logo-mark.png" alt="" width={64} height={64} priority />
             <div className="h-px w-40 overflow-hidden bg-white/10">
               <motion.div className="h-full bg-brand-gradient" initial={{ x: "-100%" }} animate={{ x: "0%" }} transition={{ duration: 1.1, ease: "easeInOut" }} />
             </div>

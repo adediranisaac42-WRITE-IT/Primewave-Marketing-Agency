@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 export function Logo({ dark = false, className }: { dark?: boolean; className?: string }) {
   return (
     <Link href="/" aria-label="Primewave Marketing Agency — home" className={cn("flex items-center gap-2.5", className)}>
-      <Image src="/images/primewave-mark.png" alt="" width={36} height={36} priority className="h-9 w-9" />
+      <Image src="/images/primewave-logo-mark.webp" alt="" width={44} height={42} priority className="h-10 w-auto drop-shadow-[0_0_12px_rgba(37,99,235,.35)]" />
       <span className="leading-none">
         <span className={cn("block font-display text-[17px] font-extrabold tracking-tight", dark ? "text-white" : "text-white")}>
           Primewave
