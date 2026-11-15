@@ -56,7 +56,7 @@ function Cover({ item, sizes, className }: { item: GridItem; sizes: string; clas
           fill
           sizes={sizes}
           quality={90}
-          className="object-cover object-left transition-transform duration-700 ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
+          className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
         />
       )}
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-deep/30" />
