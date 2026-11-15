@@ -12,8 +12,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   founder: { name: "Isaac Adediran", role: "Founder & CEO" },
   contact: {
-    email: null as string | null, // e.g. "hello@primewaveagency.com"
-    ukPhone: null as string | null, // add the UK business number when ready, e.g. "+44 ..."
+    email: "info.primewavemarketingagency@gmail.com" as string | null,
+    ukPhone: "+44 7882 739370" as string | null,
     whatsapp: "https://wa.me/447882739370" as string | null,
   },
   social: {
@@ -21,7 +21,7 @@ export const site = {
     instagram: null as string | null,
     linkedin: null as string | null,
     facebook: null as string | null,
-    fiverr: null as string | null,
+    fiverr: "https://www.fiverr.com/s/2pG3VqV" as string | null,
   },
   markets: ["United States", "United Kingdom", "Canada", "International markets"],
 } as const;
