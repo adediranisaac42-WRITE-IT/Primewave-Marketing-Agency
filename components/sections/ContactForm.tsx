@@ -31,6 +31,9 @@ export function ContactForm() {
     if (params.get("intent") === "call" && msg instanceof HTMLTextAreaElement && !msg.value) {
       msg.value = "I'd like to book a strategy call. A good time for me is: ";
     }
+    if (params.get("intent") === "offer" && msg instanceof HTMLTextAreaElement && !msg.value) {
+      msg.value = "I'd like to claim the 10% Christmas offer. The project I have in mind is: ";
+    }
   }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {

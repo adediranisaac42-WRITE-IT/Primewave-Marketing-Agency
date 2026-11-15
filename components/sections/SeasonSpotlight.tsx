@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { seasonEvents } from "@/lib/data/season";
-import { ctas } from "@/lib/site";
 
 const BARS = 72;
 // Deterministic bar lengths so server and client render the same ring.
@@ -33,12 +32,12 @@ export function SeasonSpotlight() {
   const now = useNow();
   // Before hydration, assume the first event; afterwards always the next upcoming one.
   const event = useMemo(
-    () => (now === null ? seasonEvents[0] : seasonEvents.find((e) => Date.parse(e.at) > now)),
+    () => (now === null ? seasonEvents[0] : seasonEvents.find((e) => Date.parse(e.endsAt) > now)),
     [now]
   );
   if (!event) return null;
 
-  const diff = now === null ? null : Math.max(0, Date.parse(event.at) - now);
+  const diff = now === null ? null : Math.max(0, Date.parse(event.endsAt) - now);
   const parts =
     diff === null
       ? null
@@ -48,7 +47,6 @@ export function SeasonSpotlight() {
           mins: Math.floor((diff / 6e4) % 60),
           secs: Math.floor((diff / 1e3) % 60),
         };
-  const monthLabel = new Date(event.at).toLocaleDateString("en-GB", { month: "long", year: "numeric", timeZone: "America/New_York" });
 
   return (
     <section aria-labelledby="season-title" className="section relative isolate overflow-hidden bg-deep">
@@ -61,10 +59,10 @@ export function SeasonSpotlight() {
         {/* Copy */}
         <Reveal className="text-center lg:text-left">
           <span className="inline-flex rounded-full border border-accent/40 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-accent-300">
-            {monthLabel} · Peak season
+            {event.eyebrow}
           </span>
           <h2 id="season-title" className="mt-7 font-display text-5xl font-bold leading-[1.05] text-white md:text-6xl">
-            Countdown to <span className="italic text-accent">{event.name}</span>
+            {event.title} <span className="italic text-accent">{event.titleAccent}</span>
           </h2>
           <p className="mt-6 text-2xl font-semibold text-accent-300">{event.headline}</p>
           <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-muted lg:mx-0">{event.body}</p>
@@ -124,16 +122,16 @@ export function SeasonSpotlight() {
         {/* Offer + countdown */}
         <div className="grid gap-5">
           <Reveal className="rounded-2xl border border-white/10 bg-surface/80 p-7 shadow-card backdrop-blur-sm">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">Get peak-season ready</p>
-            <p className="mt-3 font-display text-2xl font-bold leading-snug text-white">Store conversion &amp; speed review</p>
-            <Button href="/contact?service=conversion-rate-optimization" className="mt-6 w-full">Get Started</Button>
-            <Link href="/services/conversion-rate-optimization" className="mt-4 flex items-center justify-center gap-1.5 text-sm font-semibold text-accent-300 hover:text-white">
-              Explore CRO <ArrowRight className="h-4 w-4" />
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">{event.cardLabel}</p>
+            <p className="mt-3 font-display text-2xl font-bold leading-snug text-white">{event.cardTitle}</p>
+            <Button href={event.cardCta.href} className="mt-6 w-full">{event.cardCta.label}</Button>
+            <Link href="/services" className="mt-4 flex items-center justify-center gap-1.5 text-sm font-semibold text-accent-300 hover:text-white">
+              Explore our services <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
 
           <Reveal delay={0.1} className="rounded-2xl border border-white/10 bg-surface/80 p-7 shadow-card backdrop-blur-sm">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">{event.name} starts in</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">{event.countdownLabel}</p>
             <div role="timer" aria-live="off" className="mt-4 grid grid-cols-4 gap-2">
               {(["days", "hours", "mins", "secs"] as const).map((k) => (
                 <div key={k} className="rounded-xl border border-white/10 bg-deep/70 px-1 py-3 text-center">
@@ -144,9 +142,7 @@ export function SeasonSpotlight() {
                 </div>
               ))}
             </div>
-            <Link href={ctas.call.href} className="mt-5 flex items-center justify-center gap-1.5 text-sm font-semibold text-white/80 hover:text-accent-300">
-              {ctas.call.label} <ArrowRight className="h-4 w-4" />
-            </Link>
+            {event.terms && <p className="mt-4 text-center text-xs leading-relaxed text-muted">{event.terms}</p>}
           </Reveal>
         </div>
       </div>
