@@ -20,11 +20,23 @@ export function OfferingsGrid({ heading = true }: { heading?: boolean }) {
             <Button href="/services" variant="secondary" className="shrink-0">View All Services</Button>
           </div>
         )}
-        <Stagger className={cn("grid gap-6 sm:grid-cols-2 xl:grid-cols-5 xl:gap-5", heading && "mt-14")}>
+        {/* Phones: one swipeable row (scroll left/right). Tablet and up: the normal grid. */}
+        <Stagger
+          className={cn(
+            "-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-5 px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+            "sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-5 xl:gap-5",
+            heading && "mt-14"
+          )}
+        >
           {offerings.map((o, i) => (
-            <StaggerItem key={o.slug} className="h-full"><OfferingCard offering={o} index={i} /></StaggerItem>
+            <StaggerItem key={o.slug} className="h-full w-[82%] shrink-0 snap-start sm:w-auto">
+              <OfferingCard offering={o} index={i} />
+            </StaggerItem>
           ))}
         </Stagger>
+        <p aria-hidden className="mt-3 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted sm:hidden">
+          <span>←</span> Swipe to see all {offerings.length} services <span>→</span>
+        </p>
       </div>
     </section>
   );

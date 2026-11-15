@@ -13,8 +13,8 @@ const steps = [
     label: "Discover",
     title: "We understand your business.",
     body: "Research your business, customers, challenges, market and growth opportunities.",
-    image: "/images/about/digital-marketing.webp",
-    alt: "Strategist reviewing business data with colleagues",
+    image: "/images/services/product-research-listing.webp",
+    alt: "Product and market research shown on a laptop",
   },
   {
     label: "Strategize",
@@ -27,8 +27,8 @@ const steps = [
     label: "Design",
     title: "We create experiences that convert.",
     body: "Build compelling websites, customer journeys and marketing experiences.",
-    image: "/images/about/website-development.webp",
-    alt: "Designer working on a website layout across two monitors",
+    image: "/images/services/shopify-website-development.webp",
+    alt: "Online store design shown on a laptop",
   },
   {
     label: "Implement",

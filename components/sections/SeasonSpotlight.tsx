@@ -95,13 +95,13 @@ export function SeasonSpotlight() {
             <circle cx="200" cy="200" r="150" fill="none" stroke="#2F86FF" strokeOpacity=".45" strokeWidth="2" strokeDasharray="1 9" strokeLinecap="round" />
           </svg>
 
-          <div className="absolute inset-[24%] grid place-items-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#ffffff_0%,#eef3fb_55%,#c9d6ea_100%)] shadow-[0_30px_80px_-20px_rgba(29,111,242,.55),inset_0_-10px_30px_rgba(23,36,58,.15)]">
+          <div className="absolute inset-[24%] grid place-items-center rounded-full bg-[radial-gradient(circle_at_35%_30%,#1a3a7a_0%,#0b1a3d_55%,#060d22_100%)] shadow-[0_30px_80px_-20px_rgba(29,111,242,.55),inset_0_0_0_1px_rgba(141,187,255,.25)]">
             <Image
-              src="/images/primewave-logo-mark.png"
+              src="/images/primewave-mark.png"
               alt=""
-              width={287}
-              height={277}
-              className="h-auto w-[56%] drop-shadow-[0_10px_18px_rgba(8,13,22,.35)] motion-safe:animate-[drift_9s_ease-in-out_infinite]"
+              width={256}
+              height={256}
+              className="h-auto w-[78%] drop-shadow-[0_10px_24px_rgba(29,111,242,.45)] motion-safe:animate-[drift_9s_ease-in-out_infinite]"
             />
           </div>
 
