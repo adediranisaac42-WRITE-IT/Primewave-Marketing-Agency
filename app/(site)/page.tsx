@@ -5,6 +5,7 @@ import { OfferingsGrid } from "@/components/sections/OfferingsGrid";
 import { SeasonSpotlight } from "@/components/sections/SeasonSpotlight";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { PortfolioShowcase } from "@/components/sections/PortfolioShowcase";
+import { ClientResults } from "@/components/sections/ClientResults";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <SeasonSpotlight />
       <ProcessSteps />
       <PortfolioShowcase limit={5} />
+      <ClientResults />
       <WhyChoose />
       <Team />
       <Testimonials />
