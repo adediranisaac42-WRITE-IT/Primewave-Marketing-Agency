@@ -12,7 +12,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   founder: { name: "Isaac Adediran", role: "Founder & CEO" },
   contact: {
-    email: "info.primewavemarketingagency@gmail.com" as string | null,
+    email: "paul@primewavemarketing.agency" as string | null,
     ukPhone: "+44 7882 739370" as string | null,
     whatsapp: "https://wa.me/447882739370" as string | null,
   },
